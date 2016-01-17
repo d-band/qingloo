@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="_csrf" content="{{_csrf}}">
+    <meta name="description" content="{{env.description}}">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>{{env.title}}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+    body{
+      background-color: #eff2f5;
+      color: #333;
+      font-size: 14px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .error-code {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin:40px 0 10px;
+    }
+    .error-msg {
+      text-align: center;
+      margin-bottom:40px;
+    }
+    .error-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      width: 80px;
+      color: #fff;
+      background-color: #1abc9c;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div style="text-align:center;margin:40px 0;padding-left:10px">
+      <img src="{{env.staticRoot}}/c/img/error.png" width="128" height="143">
+    </div>
+    <div class="error-code">{{status}}</div>
+    <div class="error-msg">{{message}}</div>
+    <p style="text-align:center;">
+      <a href="/" class="error-btn">返回首页</a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'layout/default.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{env.staticRoot}}/p/home/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel">
+      Hello
+    </div>
+  </div>
+  <div class="col-md-3">
+    World
+  </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+<script src="{{env.staticRoot}}/p/home/index.js"></script>
+{% endblock %}

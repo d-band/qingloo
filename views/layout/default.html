@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <meta name="_csrf" content="{{_csrf}}">
+    <meta name="description" content="{{env.description}}">
+    <link rel="icon" href="/favicon.ico">
+    <title>{{env.title}}</title>
+    <link rel="stylesheet" href="{{env.staticRoot}}/index.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{env.staticRoot}}/lib/html5shiv/index.js"></script>
+    <script src="{{env.staticRoot}}/lib/respond/index.js"></script>
+    <script src="{{env.staticRoot}}/lib/es5-shim/index.js"></script>
+    <script src="{{env.staticRoot}}/lib/es5-shim/sham.js"></script>
+    <![endif]-->
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <div class="alert alert-danger top-msg" role="alert">
+      你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说
+      <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a>
+    </div>
+    <![endif]-->
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="#">轻楼</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">首页</a></li>
+            <li><a href="#feed">动态</a></li>
+            <li><a href="#category">分类</a></li>
+            <li><a href="#help">帮助</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+    <script src="{{env.staticRoot}}/lib/jquery/index.js"></script>
+    <script src="{{env.staticRoot}}/lib/bootstrap/index.js"></script>
+    <script src="{{env.staticRoot}}/index.js"></script>
+    {% block foot %}{% endblock %}
+  </body>
+</html>
