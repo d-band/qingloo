@@ -6,11 +6,12 @@ const pkg = require('./package.json');
 module.exports = {
   version: pkg.version,
   debug: process.env.NODE_ENV !== 'prod',
-  port: 9000,
+  port: 9009,
   db: {
     db: 'db_qingloo',
     username: 'qingloo',
-    password: '112358',
+    //password: '112358',
+    password: 'root123',
     // Supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
     dialect: 'postgres',
     host: '127.0.0.1',

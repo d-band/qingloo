@@ -26,6 +26,7 @@ fs.readdirSync(path).forEach(function(file) {
 });
 
 // 启动时同步一次
+// sequelize.drop();
 sequelize.sync();
 
 module.exports = extend({
