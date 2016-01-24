@@ -1,0 +1,19 @@
+{% extends 'layout/default.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{env.staticRoot}}/p/category/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-9">
+    <h3>所有分类</h3>
+    <div class="category-list"></div>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+<script src="{{env.staticRoot}}/p/category/index.js"></script>
+{% endblock %}
