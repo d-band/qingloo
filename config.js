@@ -10,7 +10,6 @@ module.exports = {
   db: {
     db: 'db_qingloo',
     username: 'qingloo',
-    //password: '112358',
     password: 'root123',
     // Supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
     dialect: 'postgres',
