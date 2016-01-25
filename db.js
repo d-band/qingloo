@@ -26,7 +26,7 @@ fs.readdirSync(path).forEach(function(file) {
 });
 
 // 添加关联关系
-require('./relation')(models);
+require('./models/relation')(models);
 
 // 启动时同步一次
 sequelize.sync({ force: true });

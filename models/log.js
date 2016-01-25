@@ -5,35 +5,18 @@ const util = require('../lib/util');
 module.exports = function(sequelize, DataTypes) {
 
 	var columns = {
-		id: 	{ 
-      		type: DataTypes.BIGINT.UNSIGNED,
-      		primaryKey: true,
-      		autoIncrement: true
+		type: 	{ 
+      		type: DataTypes.INTEGER,
     	},
     	ip: 			{
     		type: DataTypes.STRING,
     		allowNull: false,
 
     	},
-        author:         {
-            type: DataTypes.INTEGER,
-            comment: '操作者',
-            references: {
-                model : 'user',
-                key : 'id',
-                // deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-        },
-        action : {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            comment: '操作类型',
-            references : {
-                model: 'action',
-                key: 'id',
-                // deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-        }, 
+        description:  {
+            type: DataTypes.STRING,
+            allowNull: true,
+        }
       
 	};
 

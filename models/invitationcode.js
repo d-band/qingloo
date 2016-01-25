@@ -5,11 +5,6 @@ const util = require('../lib/util');
 module.exports = function(sequelize, DataTypes) {
 
 	var columns = {
-		id: 	{ 
-      		type: DataTypes.INTEGER.UNSIGNED,
-      		primaryKey: true,
-      		autoIncrement: true
-    	},
     	code: 			{
     		type: DataTypes.STRING,
     		allowNull: false,
@@ -45,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
 		timestamps 	: true,
 		paranoid 	: true,
 		tableName 	: 'invitationcode',
-        comment     : '邀请码'
+        comment     : '邀请码,只用来邀请成员加入本贴吧'
 	})
     
     return InvitationCode;
