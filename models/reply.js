@@ -1,51 +1,26 @@
 'use strict';
 
-const util = require('../lib/util');
-
 module.exports = function(sequelize, DataTypes) {
-
-	var columns = {
-		id: 	{ 
-      		type: DataTypes.INTEGER(10).UNSIGNED,
-      		primaryKey: true,
-      		autoIncrement: true
-    	},
-    	content: 			{
-    		type: DataTypes.STRING,
-    		allowNull: false,
-
-    	},
-    	topic: 	{
-    		type: DataTypes.BIGINT,
-    		allowNull:false,
-            references:{
-                model: 'topic',
-                key: 'id',
-                // deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-    	},
-        author:         {
-            type: DataTypes.INTEGER,
-            references: {
-                model : 'user',
-                key : 'id',
-                // deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-        },
-        floor: {
-            type: DataTypes.INTEGER,
-            comment: '楼层',
-            allowNull: true,
-        }, 
-	};
-
-	var Reply = sequelize.define('Reply', columns, {
-
-		timestamps 	: true,
-		paranoid 	: true,
-		tableName 	: 'reply',
-        comment     : '回复表'
-	})
-    
-    return Reply;
-}
+  return sequelize.define('Reply', {
+    // 基本信息
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    floor: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      comment: '楼层'
+    },
+    // 统计信息
+    commentCount: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: '回复数'
+    }
+  }, {
+    tableName: 'reply',
+    comment: '评论表'
+  });
+};
