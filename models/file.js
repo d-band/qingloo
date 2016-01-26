@@ -1,18 +1,15 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Log', {
-    ip: {
-      type: DataTypes.STRING(40),
+  return sequelize.define('File', {
+    path: {
+      type: DataTypes.STRING(100),
       allowNull: false
-    },
-    type: {
-      type: DataTypes.INTEGER
     },
     description: {
       type: DataTypes.STRING(255)
     }
   }, {
-    tableName: 'log'
+    tableName: 'file'
   });
 };

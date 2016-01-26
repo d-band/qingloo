@@ -25,9 +25,11 @@ fs.readdirSync(path).forEach(function(file) {
   }
 });
 
+// 添加关联关系
+require('./models/relation')(models);
+
 // 启动时同步一次
-// sequelize.drop();
-sequelize.sync();
+sequelize.sync({ force: true });
 
 module.exports = extend({
   sequelize: sequelize,

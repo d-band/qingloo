@@ -38,10 +38,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">首页</a></li>
-            <li><a href="#feed">动态</a></li>
-            <li><a href="#category">分类</a></li>
-            <li><a href="#help">帮助</a></li>
+            <li class="{{nav_home}}"><a href="/">首页</a></li>
+            <li class="{{nav_feed}}"><a href="#feed">动态</a></li>
+            <li class="{{nav_category}}"><a href="/category">分类</a></li>
+            <li class="{{nav_help}}"><a href="#help">帮助</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">登录</a></li>
@@ -55,7 +55,6 @@
       {% block content %}{% endblock %}
     </div>
     <script src="{{env.staticRoot}}/lib/jquery/index.js"></script>
-    <script src="{{env.staticRoot}}/lib/bootstrap/index.js"></script>
     <script src="{{env.staticRoot}}/index.js"></script>
     {% block foot %}{% endblock %}
   </body>

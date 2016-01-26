@@ -1,58 +1,40 @@
 'use strict';
 
-const util = require('../lib/util');
-
 module.exports = function(sequelize, DataTypes) {
-
-	var columns = {
-		id: 	{ 
-      		type: DataTypes.BIGINT.UNSIGNED,
-      		primaryKey: true,
-      		autoIncrement: true
-    	},
-    	name: 			{
-    		type: DataTypes.STRING,
-    		allowNull: false,
-
-    	},
-        avator :         {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            comment: '头像',
-            references : {
-                model: 'image',
-                key: 'id',
-                // deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-        },
-        background : {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            comment: '背景图片',
-            references : {
-                model: 'image',
-                key: 'id',
-                // deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-        }, 
-        level: {
-            type: DataTypes.INTEGER,
-            
-        }, 
-    	description: 	{
-    		type: DataTypes.STRING,
-    		allowNull:true,
-    		defaultValue: null
-    	}
-    	
-	};
-
-	var Group = sequelize.define('Group', columns, {
-
-		paranoid 	: true,
-		tableName 	: 'group',
-        comment     : '贴吧'
-	})
-    
-    return Group;
-}
+  return sequelize.define('Group', {
+    // 基本信息
+    name: {
+      type: DataTypes.STRING(60),
+      allowNull: false,
+      comment: '贴吧名称'
+    },
+    avatar: {
+      type: DataTypes.STRING(100),
+      comment: '贴吧头像'
+    },
+    cover: {
+      type: DataTypes.STRING(100),
+      comment: '背景图片'
+    },
+    description: {
+      type: DataTypes.TEXT,
+      comment: '描述'
+    },
+    // 统计信息
+    focusCount: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: '关注数'
+    },
+    topicCount: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: '帖子数'
+    }
+  }, {
+    tableName: 'group',
+    comment: '贴吧'
+  });
+};
