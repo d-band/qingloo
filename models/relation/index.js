@@ -42,36 +42,35 @@ module.exports = function(m) {
   //上传文件外键
   m.File.belongsTo(m.User, {
     foreignKey: 'userId'
-  })
+  });
 
   //邀请码外键
-  m.InvitationCode.belongsTo(m.Group, {
+  m.Invitation.belongsTo(m.Group, {
     foreignKey: 'groupId'
-  })
+  });
 
   //日志外键
   m.Log.belongsTo(m.User, {
     foreignKey: 'userId'
-  })
+  });
 
   //站内信外键
   m.Message.belongsTo(m.User, {
     foreignKey: 'authorId'
-  })
+  });
   m.Message.belongsTo(m.User, {
     foreignKey: 'receiptId'
-  })
+  });
 
   //举报外键
   m.Report.belongsTo(m.User, {
     foreignKey: 'userId'
-  })
+  });
   //订阅（关注)外键
   m.Subscription.belongsTo(m.User, {
     foreignKey: 'userId'
-  })
+  });
   m.Subscription.belongsTo(m.Group,{
     foreignKey: 'groupId'
-  })
-
+  });
 };
