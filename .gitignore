@@ -25,4 +25,3 @@ tmp/
 .buildpath
 .settings
 coverage
-config.js
