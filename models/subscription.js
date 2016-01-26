@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
 	var Subscription = sequelize.define('Subscription', {}, {
 
 		paranoid 	: true,
-		tableName 	: 'subscription'
+		tableName 	: 'subscription',
         comment     : '订阅表（关注)'
 	})
     

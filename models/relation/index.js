@@ -4,14 +4,14 @@ module.exports = function(m) {
   // 每个用户可以加入多个贴吧
   m.User.belongsToMany(m.Group, {
     as: 'Groups',
-    through: m.GroupMembers,
+    through: m.Member,
     foreignKey: 'userId'
   });
 
   // 每个贴吧有多个成员
   m.Group.belongsToMany(m.User, {
     as: 'Members',
-    through: m.GroupMembers,
+    through: m.Member,
     foreignKey: 'groupId'
   });
 

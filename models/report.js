@@ -18,10 +18,10 @@ module.exports = function(sequelize, DataTypes) {
         type: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }
+        },
         againstId: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
             comment: '被举报的ID，可以是 topic，reply，和comment，不可以举报会员'
         }
       
