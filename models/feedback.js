@@ -3,11 +3,11 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Feedback', {
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     contact: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING(100)
     }
   }, {
     tableName: 'feedback',

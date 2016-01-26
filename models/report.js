@@ -3,12 +3,12 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Report', {
     type: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
       comment: '分类，在代码中指定'
     },
     reason: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(400),
       allowNull: false
     },
     againstId: {

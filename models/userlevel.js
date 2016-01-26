@@ -2,11 +2,6 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('UserLevel', {
-    id: {
-      type: DataTypes.INTEGER(10).UNSIGNED,
-      primaryKey: true,
-      autoIncrement: true
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
