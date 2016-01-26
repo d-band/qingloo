@@ -5,161 +5,25 @@
 {% endblock %}
 
 {% block content %}
+<div class="banner bg-primary">
+  贴吧志愿者招聘公告
+</div>
 <div class="row">
-<!-- <<<<<<< HEAD -->
-  <div class="col-md-12">
-    <div class="panel no-border">
-    <div class="banner">
-    	<p class="banner-content">
-    		贴吧志愿者招聘公告
-    	</p>
-    </div>
-<!-- ======= -->
-  <!-- <div class="col-md-9">
+  <div class="col-md-9">
     <div class="panel panel-default">
       <div class="panel-heading"><strong>热门贴吧</strong></div>
-      <div class="panel-body"></div>
+      <div id="J_hotList" class="panel-body pb0"></div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading"><strong>帖子精选（头牌）</strong></div>
-      <div class="panel-body"></div> -->
-<!-- >>>>>>> 45915dd1a4e93c7f6d4a45b16a18a525d0855e74 -->
+      <div class="panel-body"></div>
     </div>
   </div>
-</div>
-
-
-<div class="row">
-  <div class="col-md-9">
-    <section class="hot-tb">
-      <header class="">
-      	<p>热门贴吧</p>
-      </header>
-      <div class="hot-tb-container">
-      		<ul class="hot-tb-list-wrap row">
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      				<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      				<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-      			<li class="hot-tb-list col-sm-4">
-      				<div class="hot-tb-detail">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      					<div class="summary">
-      						<p class="tb-name"><a "javascript:;">高血压吧</a> </p>
-      						<p class="summary-info">高血压（hypertension）是指以体循环动脉血压指以体循</p>
-      					</div>
-      				</div>
-      			</li>
-    
-      		</ul>
-      </div>
-    </section>
-
-     <section class="greatest-article hide">
-      <header class="">
-      	<p>帖子精选（ 头牌 ）</p>
-      </header>
-      <div class="greatest-article-container">
-      		<ul class="greatest-article-list-wrap ">
-      			<li class="greatest-article-list row no-margin-lr">
-      				<div class="tb-about col-sm-2">
-      					<img src="{{env.staticRoot}}/c/img/mock.jpg"  alt="">
-      					<p class="tb-name">高血压吧</p>
-      					<p class="like"><span class="ti-heart"></span></p>
-      					<p class="like-num"><span >1200</span></p>
-      				</div>
-      				<div class="article-about col-sm-10">
-      					<header class="article-name">为什么会得高血压</header>
-      					<div class="article-summary">
-      						<img src="{{env.staticRoot}}/c/img/mock.jpg" alt="">
-      						<p class="article-author-about"><span>来自:</span> <span class="gender ti-user"></span> <span>Mindy</span> <time>2016-1-20 13:01:11</time></p>
-      					</div>
-      					
-      				</div>
-
-      			</li>
-      		</ul>
-      </div>
-    </section>
-
-  </div>
   <div class="col-md-3">
-<!-- <<<<<<< HEAD -->
-    <!-- World -->
-=======
-<!--     <div class="panel panel-default">
+    <div class="panel panel-default">
       <div class="panel-heading"><strong>大咖人气（Top 10）</strong></div>
       <div class="panel-body"></div>
-    </div> -->
-<!-- >>>>>>> 45915dd1a4e93c7f6d4a45b16a18a525d0855e74 -->
+    </div>
   </div>
 </div>
 
