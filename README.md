@@ -1,6 +1,8 @@
 Qingloo
 ===
 
+[![Dependency Status](https://david-dm.org/d-band/qingloo.svg)](https://david-dm.org/d-band/qingloo)
+
 ## Install
 
 ```bash
