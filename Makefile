@@ -8,6 +8,6 @@ debug:
 	node --harmony $(NODE_DEBUG) ./node_modules/.bin/_mocha -R spec -t 20000 --require should --require co-mocha --inline-diffs
 
 lint:
-	@./node_modules/.bin/eslint --ext .js .
+	@./node_modules/.bin/eslint --ext .js --fix .
 
 .PHONY: test
