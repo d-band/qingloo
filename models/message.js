@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Message', {
     content: {
-      type: DataTypes.TEXT,
+      type: types.TEXT,
       allowNull: false
     },
     fromSystem: {
-      type: DataTypes.BOOLEAN,
+      type: types.BOOLEAN,
       defaultValue: false
     }
   }, {

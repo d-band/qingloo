@@ -2,11 +2,11 @@
 
 const User = require('../db').User;
 
-exports.main = function*() {
+exports.main = function *() {
   yield this.render('/index');
 };
 
-exports.auth = function*() {
+exports.auth = function *() {
   let data = this.request.body;
   let user = yield User.auth(data.username, data.password);
   if (user) {
@@ -18,7 +18,7 @@ exports.auth = function*() {
   }
 };
 
-exports.isAuth = function*(next) {
+exports.isAuth = function *(next) {
   if (this.session.user) {
     yield next;
   } else {

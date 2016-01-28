@@ -1,8 +1,8 @@
 'use strict';
 
-var assert = require('assert');
-var app = require('../app');
-var request = require('supertest').agent(app.listen());
+const assert = require('assert');
+const app = require('../app');
+const request = require('supertest').agent(app.listen());
 
 describe('controllers/user/login', function() {
   it('should GET /login ok', function(done) {

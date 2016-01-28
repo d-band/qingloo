@@ -1,18 +1,18 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Report', {
     type: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       allowNull: false,
       comment: '分类，在代码中指定'
     },
     reason: {
-      type: DataTypes.STRING(400),
+      type: types.STRING(400),
       allowNull: false
     },
     againstId: {
-      type: DataTypes.INTEGER,
+      type: types.INTEGER,
       allowNull: false,
       comment: '被举报的ID，可以是 topic，reply，和comment，不可以举报会员'
     }

@@ -20,7 +20,7 @@ module.exports = {
       min: 0,
       idle: 30000
     },
-    logging: !!process.env.SQL_DEBUG,
+    logging: !!process.env.SQL_DEBUG
   },
   env: {
     title: '轻楼 - 有良心的贴吧',

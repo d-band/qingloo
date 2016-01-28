@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Subscription', {
     comment: {
-      type: DataTypes.STRING(255),
+      type: types.STRING(255),
       comment: '备注'
     }
   }, {

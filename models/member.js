@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Member', {
     level: {
-      type: DataTypes.INTEGER,
+      type: types.INTEGER,
       allowNull: false,
       comment: '成员等级：1-吧主、2-小吧主、3-普通成员'
     }

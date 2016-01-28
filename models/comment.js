@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Comment', {
     content: {
-      type: DataTypes.TEXT,
+      type: types.TEXT,
       allowNull: false
     }
   }, {

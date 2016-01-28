@@ -1,7 +1,6 @@
 node_modules
 spm_modules/
 coverage
-test/fixtures
-test/expected
+test
 tmp
 public

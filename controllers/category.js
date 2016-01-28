@@ -1,5 +1,5 @@
 'use strict';
 
-exports.all = function*() {
+exports.all = function *() {
   yield this.render('/category');
 };

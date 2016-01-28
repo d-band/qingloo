@@ -1,4 +1,4 @@
-test: jshint
+test: lint
 	node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec -t 20000 --require should --require co-mocha --inline-diffs
 
 coveralls: test
@@ -7,7 +7,7 @@ coveralls: test
 debug:
 	node --harmony $(NODE_DEBUG) ./node_modules/.bin/_mocha -R spec -t 20000 --require should --require co-mocha --inline-diffs
 
-jshint:
-	@./node_modules/.bin/jshint .
+lint:
+	@./node_modules/.bin/eslint --ext .js .
 
 .PHONY: test

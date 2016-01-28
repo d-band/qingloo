@@ -1,20 +1,20 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Reply', {
     // 基本信息
     content: {
-      type: DataTypes.TEXT,
+      type: types.TEXT,
       allowNull: false
     },
     floor: {
-      type: DataTypes.INTEGER,
+      type: types.INTEGER,
       allowNull: false,
       comment: '楼层'
     },
     // 统计信息
     commentCount: {
-      type: DataTypes.INTEGER,
+      type: types.INTEGER,
       allowNull: false,
       defaultValue: 0,
       comment: '回复数'

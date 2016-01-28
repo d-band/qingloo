@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Feedback', {
     content: {
-      type: DataTypes.TEXT,
+      type: types.TEXT,
       allowNull: false
     },
     contact: {
-      type: DataTypes.STRING(100)
+      type: types.STRING(100)
     }
   }, {
     tableName: 'feedback',

@@ -39,22 +39,22 @@ module.exports = function(m) {
     foreignKey: 'userId'
   });
 
-  //上传文件外键
+  // 上传文件外键
   m.File.belongsTo(m.User, {
     foreignKey: 'userId'
   });
 
-  //邀请码外键
+  // 邀请码外键
   m.Invitation.belongsTo(m.Group, {
     foreignKey: 'groupId'
   });
 
-  //日志外键
+  // 日志外键
   m.Log.belongsTo(m.User, {
     foreignKey: 'userId'
   });
 
-  //站内信外键
+  // 站内信外键
   m.Message.belongsTo(m.User, {
     foreignKey: 'authorId'
   });
@@ -62,15 +62,15 @@ module.exports = function(m) {
     foreignKey: 'receiptId'
   });
 
-  //举报外键
+  // 举报外键
   m.Report.belongsTo(m.User, {
     foreignKey: 'userId'
   });
-  //订阅（关注)外键
+  // 订阅（关注)外键
   m.Subscription.belongsTo(m.User, {
     foreignKey: 'userId'
   });
-  m.Subscription.belongsTo(m.Group,{
+  m.Subscription.belongsTo(m.Group, {
     foreignKey: 'groupId'
   });
 };

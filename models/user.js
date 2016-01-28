@@ -2,59 +2,59 @@
 
 const util = require('../lib/util');
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('User', {
     name: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       allowNull: false,
       comment: '用户名',
       unique: true
     },
     pass: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       allowNull: false,
       comment: '密码'
     },
     salt: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       allowNull: false,
       comment: '盐'
     },
     nickname: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       comment: '昵称'
     },
     avatar: {
-      type: DataTypes.STRING(100),
+      type: types.STRING(100),
       comment: '头像'
     },
     email: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       comment: '邮箱'
     },
     credit: {
-      type: DataTypes.INTEGER,
+      type: types.INTEGER,
       allowNull: false,
       defaultValue: 0,
       comment: '积分'
     },
     secureQuestion: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       comment: '安全问题'
     },
     secureAnswer: {
-      type: DataTypes.STRING,
+      type: types.STRING,
       comment: '安全问题答案'
     },
     verified: {
-      type: DataTypes.BOOLEAN,
+      type: types.BOOLEAN,
       comment: '加V'
     }
   }, {
     tableName: 'user',
     comment: '用户表',
     classMethods: {
-      auth: function*(username, password) {
+      auth: function *(username, password) {
         let user = yield this.findOne({
           where: { name: username }
         });
@@ -69,7 +69,7 @@ module.exports = function(sequelize, DataTypes) {
         }
         return null;
       },
-      add: function*(username, password) {
+      add: function *(username, password) {
         let salt = util.makeSalt();
         let row = this.build({
           name: username,
@@ -79,7 +79,7 @@ module.exports = function(sequelize, DataTypes) {
 
         return yield row.save();
       },
-      changepwd: function*(username, newpwd) {
+      changepwd: function *(username, newpwd) {
         let salt = util.makeSalt();
         return yield this.update({
           salt: salt,

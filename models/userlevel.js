@@ -1,18 +1,18 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('UserLevel', {
     name: {
-      type: DataTypes.STRING,
+      type: types.STRING,
       allowNull: false
     },
     minCredit: {
-      type: DataTypes.STRING,
+      type: types.STRING,
       allowNull: false,
       comment: '最小积分'
     },
     maxCredit: {
-      type: DataTypes.INTEGER,
+      type: types.INTEGER,
       comment: '最大积分',
       allowNull: false
     }

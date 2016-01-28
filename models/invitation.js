@@ -1,22 +1,22 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, types) {
   return sequelize.define('Invitation', {
     code: {
-      type: DataTypes.STRING(50),
+      type: types.STRING(50),
       allowNull: false
     },
     used: {
-      type: DataTypes.BOOLEAN,
+      type: types.BOOLEAN,
       allowNull: false,
       defaultValue: false
     },
     validFrom: {
-      type: DataTypes.DATE,
+      type: types.DATE,
       allowNull: false
     },
     validThrough: {
-      type: DataTypes.DATE,
+      type: types.DATE,
       allowNull: false
     }
   }, {
