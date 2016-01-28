@@ -6,7 +6,7 @@ const pkg = require('./package.json');
 module.exports = {
   version: pkg.version,
   debug: process.env.NODE_ENV !== 'prod',
-  port: 9009,
+  port: process.env.PORT || 9009,
   db: {
     db: process.env.DB_NAME || 'db_qingloo',
     username: process.env.DB_USER || 'qingloo',
