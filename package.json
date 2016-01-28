@@ -9,8 +9,12 @@
   "main": "app.js",
   "scripts": {
     "start": "NODE_ENV=debug DEBUG=* node --harmony app.js",
-    "test": "make test"
+    "test": "make test",
+    "jshint": "jshint ."
   },
+  "pre-commit": [
+    "jshint"
+  ],
   "dependencies": {
     "co": "latest",
     "ip": "latest",
@@ -36,6 +40,7 @@
     "istanbul": "latest",
     "jshint": "latest",
     "mocha": "latest",
+    "pre-commit": "^1.1.2",
     "should": "latest",
     "supertest": "latest"
   },
