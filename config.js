@@ -8,13 +8,13 @@ module.exports = {
   debug: process.env.NODE_ENV !== 'prod',
   port: 9009,
   db: {
-    db: 'db_qingloo',
-    username: 'qingloo',
-    password: 'root123',
+    db: process.env.DB_NAME || 'db_qingloo',
+    username: process.env.DB_USER || 'qingloo',
+    password: process.env.DB_PASS || 'root123',
     // Supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
     dialect: 'postgres',
-    host: '127.0.0.1',
-    port: 5432,
+    host: process.env.DB_HOST || '127.0.0.1',
+    port: process.env.DB_PORT || 5432,
     pool: {
       max: 10,
       min: 0,
