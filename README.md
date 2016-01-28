@@ -1,7 +1,7 @@
 Qingloo
 ===
 
-[![Dependency Status](https://david-dm.org/d-band/qingloo.svg)](https://david-dm.org/d-band/qingloo)
+[![Dependency Status](https://david-dm.org/d-band/qingloo.svg?style=flat-square)](https://david-dm.org/d-band/qingloo)
 
 ## Install
 
