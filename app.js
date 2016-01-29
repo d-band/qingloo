@@ -1,7 +1,7 @@
 'use strict';
 
 const koa = require('koa');
-const views = require('koa-views');
+const view = require('koa-view');
 const bodyParser = require('koa-bodyparser');
 const session = require('koa-generic-session');
 const logger = require('koa-logger');
@@ -34,12 +34,8 @@ app.use(session({
   key: 'sid'
 }, app));
 
-/** Views **/
-app.use(views('views', {
-  map: {
-    html: 'swig'
-  }
-}));
+/** View **/
+app.use(view());
 
 /* Error */
 error(app);

@@ -3,7 +3,7 @@
 const User = require('../db').User;
 
 exports.main = function *() {
-  yield this.render('/index');
+  yield this.render('index');
 };
 
 exports.auth = function *() {
