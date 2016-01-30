@@ -35,7 +35,9 @@ app.use(session({
 }, app));
 
 /** View **/
-app.use(view());
+app.use(view(__dirname + '/views', {
+  noCache: process.env.NODE_ENV !== 'prod'
+}));
 
 /* Error */
 error(app);

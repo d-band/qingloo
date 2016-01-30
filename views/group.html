@@ -1,0 +1,75 @@
+{% set nav_group = "active" %}
+{% extends 'layout/default.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{env.staticRoot}}/p/group/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="group-header">
+  <div class="group-cover" style="background-image:url('http://ww1.sinaimg.cn/crop.0.0.920.300/005TVFMkjw1f0e1w7jhorj30pk08cn0m.jpg')"></div>
+  <div class="header-wrap">
+    <div class="info-wrap">
+      <div class="info-avatar">
+        <img src="http://ww3.sinaimg.cn/thumb180/005TVFMkjw1f0gi2jtmt2j3050050dgf.jpg" alt="" title="" class="pic">
+      </div>
+      <div class="info-name">#春节倒计时#</div>
+      <p class="info-desc">另有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。</p>
+      <div class="info-btns">
+        <button class="btn btn-danger btn-sm"><i class="ti-star mr5"></i>关注</button>
+        <button class="btn btn-primary btn-sm ml15"><i class="ti-pencil-alt mr5"></i>发帖</button>
+        <button class="btn btn-default btn-sm ml15"><i class="ti-plus mr5"></i>申请加入</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="group-nav clearfix">
+  <ul>
+    <li class="current">
+      <a href="#">全部</a>
+    </li>
+    <li>
+      <a href="#">最新</a>
+    </li>
+    <li>
+      <a href="#">推荐</a>
+    </li>
+    <li>
+      <a href="#">热门</a>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <div id="J_topicList"></div>
+  </div>
+  <div class="col-md-3">
+    <div class="stat-panel clearfix">
+      <div class="col-md-4">
+        <div class="stat-count">3400</div>
+        <div class="stat-name">关注数</div>
+      </div>
+      <div class="col-md-4 bl br">
+        <div class="stat-count">600</div>
+        <div class="stat-name">帖子数</div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-count">9400</div>
+        <div class="stat-name">浏览数</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong>最近加入</strong></div>
+      <div class="panel-body"></div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong>活跃会员</strong></div>
+      <div class="panel-body"></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block foot %}
+<script src="{{env.staticRoot}}/p/group/index.js"></script>
+{% endblock %}
