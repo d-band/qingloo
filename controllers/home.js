@@ -25,3 +25,13 @@ exports.isAuth = function *(next) {
     this.redirect('/login');
   }
 };
+
+exports.register = function *() {
+  
+  let data = this.request.body;
+  this.body = yield User.register(data.name, data.password);
+};
+
+exports.forgot = function *(){
+
+}

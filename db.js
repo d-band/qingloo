@@ -28,7 +28,7 @@ fs.readdirSync(path).forEach(file => {
 require('./models/relation')(models);
 
 // 启动时同步一次
-sequelize.sync({ force: true });
+sequelize.sync({ force: false });
 
 module.exports = extend({
   sequelize: sequelize,

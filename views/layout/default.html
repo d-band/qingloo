@@ -42,8 +42,8 @@
             <li class="{{nav_help}}"><a href="#help">帮助</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">登录</a></li>
-            <li><a href="#">注册</a></li>
+            <li><a href="#" id="log-link">登录</a></li>
+            <li><a href="#" id="reg-link">注册</a></li>
           </ul>
         </div>
         <!--/.nav-collapse -->
@@ -55,5 +55,135 @@
     <script src="{{env.staticRoot}}/lib/jquery/index.js"></script>
     <script src="{{env.staticRoot}}/index.js"></script>
     {% block foot %}{% endblock %}
+    <div id="loginWindow" class="sfmodal fade modal" aria-hidden="false" aria-labelledby="mySmallModalLabel"
+     role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">
+            ×
+          </span>
+          <span class="sr-only">
+            Close
+          </span>
+                </button>
+                <h4 class="modal-title">
+                    登录/注册
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p class="sfModal-content">
+                    <div class="row bg-white login-modal">
+                        <div class="col-md-4 col-sm-12 col-md-push-7 login-wrap">
+                            <h1 class="h4 text-muted login-title">
+                                用户登录
+                            </h1>
+                            <form class="mt30" role="form" method="POST" action="/api/user/login">
+                                <div class="form-group">
+                                    <label class="control-label">
+                                        用户名
+                                    </label>
+                                    <input class="form-control" id="log-name" type="text" placeholder="用户名"
+                                           required="" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">
+                                        密码
+                                    </label>
+                                    <input class="form-control" type="password" placeholder="密码" required=""
+                                           name="password">
+                                </div>
+                                <div class="form-group clearfix">
+                                    <div class="checkbox pull-left">
+                                        <label>
+                                            <input type="checkbox" checked="" value="1" name="remember">
+                                            记住登录状态
+                                        </label>
+                                    </div>
+                                    <button class="btn btn-primary pull-right pl20 pr20" type="submit">
+                                        登录
+                                    </button>
+                                </div>
+                            </form>
+                <p class="h4 text-muted visible-xs-block h4">
+                    快速登录
+                </p>
+            </div>
+            <div class="login-vline hidden-xs hidden-sm">
+            </div>
+            <div class="col-md-4 col-md-pull-3 col-sm-12 login-wrap">
+                <h1 class="h4 text-muted login-title">
+                    创建新账号
+                </h1>
+                <form class="mt30" role="form" method="POST" action="/api/user/register">
+                    <input type="hidden" name="_csrf" value="{{_csrf}}">
+                    <div class="form-group">
+                        <label class="control-label" for="name">
+                            用户名
+                        </label>
+                        <input class="form-control" id="reg-name" type="text" placeholder="字母、数字等，用户名唯一"
+                               required="" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="password">
+                            密码
+                        </label>
+                        <input class="form-control" type="password" placeholder="不少于 6 位" required=""
+                               name="password">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="mail">
+                            Email（可选）
+                        </label>
+                        <input type="hidden" name="mail" style="display:none">
+                        <div class="typehelper" style="position: relative;">
+                            <input class="form-control register-mail" type="email" placeholder="用来找回密码"
+                                   name="mail" autocomplete="off">
+                            <ul class="dropdown-menu" role="menu" style="display: none; min-width: 297px;">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="checkbox pull-left">
+                            同意并接受
+                            <a target="_blank" href="#">
+                                《服务条款》
+                            </a>
+                        </div>
+                        <button class="btn btn-primary pl20 pr20 pull-right" type="submit">
+                            注册
+                        </button>
+                    </div>
+                </form>
+            </div>
+                    </div>
+                    <div class="text-center text-muted mt30">
+                        <a class="ml5" href="/user/forgot">
+                            找回密码
+                        </a>
+                    </div>
+                </p>
+            </div>
+            <div class="modal-footer hidden">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$('#log-link').on('click',function(){
+  $('#loginWindow').on('shown.bs.modal', function () {
+    $('#log-name').focus()
+  })
+  $('#loginWindow').modal('show')
+})
+$('#reg-link').on('click',function(){
+  $('#loginWindow').on('shown.bs.modal', function () {
+    $('#reg-name').focus()
+  })
+  $('#loginWindow').modal('show')
+})
+  
+</script>
   </body>
 </html>
