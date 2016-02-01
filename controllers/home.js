@@ -27,11 +27,10 @@ exports.isAuth = function *(next) {
 };
 
 exports.register = function *() {
-  
   let data = this.request.body;
   this.body = yield User.register(data.name, data.password);
 };
 
-exports.forgot = function *(){
+exports.forgot = function *() {
 
-}
+};

@@ -88,31 +88,26 @@ module.exports = function(sequelize, types) {
           where: { name: username }
         });
       },
-      addUser: function *(name, pass){
+      addUser: function *(name, pass) {
         let salt = util.makeSalt();
-
-        let user = yield this.create({name: name, salt: salt, pass: util.encrypt(pass, salt) })
-        if(!user){
-          console.log(user.get({plain: true}));
-          return {code: 2, msg:'插入数据失败', data:{}};
-        }else{
-          return {code: 0, msg:'插入成功', data:{}};
+        let user = yield this.create({
+          name: name,
+          salt: salt,
+          pass: util.encrypt(pass, salt)
+        });
+        if (!user) {
+          return { code: 2, msg: '插入数据失败', data: {} };
+        } else {
+          return { code: 0, msg: '插入成功', data: {} };
         }
       },
-
       register: function *(name, pass) {
-
-        let user = yield this.findOne({
-          where: { name: name }
-        });
-
+        let user = yield this.findOne({ where: { name: name } });
         if (user) {
-          console.log(user.get({plain: true}));
-          return {code: 1, msg:'用户名已注册', data:user.get({plain: true})};
-        }else{
-          return yield this.addUser(name, pass)
+          return { code: 1, msg: '用户名已注册', data: user.get({plain: true}) };
+        } else {
+          return yield this.addUser(name, pass);
         }
-
       }
     }
   });
