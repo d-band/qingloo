@@ -42,8 +42,22 @@
             <li class="{{nav_help}}"><a href="#help">帮助</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            {% if user %}
+            <li>
+              <a href="javascript:;" class="user-link" data-toggle="dropdown">
+                <img class="header-avatar" src="http://sfault-avatar.b0.upaiyun.com/186/572/1865726591-1030000000416564_big64">
+                <span class="hidden-xs ml10">{{ user.nickname | default(user.name, true) }}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/people/{{ user.name }}">我的主页</a></li>
+                <li><a href="/settings/profile">设置</a></li>
+                <li><a href="/logout">退出</a></li>
+              </ul>
+            </li>
+            {% else %}
             <li><a href="javascript:;" id="J_loginBtn">登录</a></li>
             <li><a href="javascript:;" id="J_registerBtn">注册</a></li>
+            {% endif %}
           </ul>
         </div>
         <!--/.nav-collapse -->
