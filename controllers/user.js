@@ -23,7 +23,7 @@ exports.register = function *() {
   this.assert(data.username, 400, '用户名不能为空!');
   this.assert(data.password, 400, '密码不能为空!');
   this.assert(util.isName(data.username), 400, '用户名格式错误!');
-  this.assert(data.password.length < 6, 400, '密码不能为空!');
+  this.assert(data.password.length >= 6, 400, '密码长度必须大于 6!');
   this.assert(util.isEmail(data.email, true), 400, '邮箱格式错误!');
 
   let isReg = yield User.findByName(data.username);
