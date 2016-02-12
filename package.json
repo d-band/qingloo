@@ -24,7 +24,7 @@
     "koa-favicon": "~1.2.0",
     "koa-generic-session": "~1.10.1",
     "koa-logger": "~1.3.0",
-    "koa-router": "~5.3.0",
+    "koa-router": "~5.4.0",
     "koa-static": "~2.0.0",
     "koa-view": "~0.0.3",
     "moment": "latest",
