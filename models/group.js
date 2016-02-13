@@ -35,6 +35,14 @@ module.exports = function(sequelize, types) {
     }
   }, {
     tableName: 'group',
-    comment: '贴吧'
+    comment: '贴吧',
+    classMethods: {
+      getHot: function *() {
+        return yield this.findAll({
+          order: [['focusCount', 'DESC'], ['topicCount', 'DESC']],
+          limit: 10
+        });
+      }
+    }
   });
 };

@@ -1,6 +1,7 @@
 'use strict';
 
 const User = require('../db').User;
+const Group = require('../db').Group;
 
 exports.main = function *() {
   yield this.render('index');
@@ -34,3 +35,8 @@ exports.register = function *() {
 exports.forgot = function *() {
 
 };
+
+exports.hotGroup = function *() {
+  this.body = yield Group.findHot();
+};
+

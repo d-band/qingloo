@@ -2,6 +2,9 @@
 
 const User = require('../db').User;
 const util = require('../lib/util');
+const Subscription = require('../db').Subscription;
+const Member = require('../db').Member;
+const Group = require('../db').Group;
 
 exports.login = function *() {
   let data = this.request.body;
@@ -36,4 +39,42 @@ exports.register = function *() {
 
 exports.forgot = function *() {
 
+};
+
+exports.mySubscription = function *() {
+  let numberPerPage = 20;
+  let data = this.request.body;
+  let page = data.page;
+  if (!page) {
+    page = 0;
+  }
+
+  let sub = yield Subscription.findAll({
+    include: [User, Group],
+    where: {
+      userId: this.session.user.id
+    },
+    offset: page * numberPerPage,
+    limit: numberPerPage
+  });
+  this.body = util.map(sub, ['Group']);
+};
+
+exports.myGroups = function *() {
+  let numberPerPage = 20;
+  let data = this.request.body;
+  let page = data.page;
+  if (!page) {
+    page = 0;
+  }
+
+  let sub = yield Member.findAll({
+    include: [User, Group],
+    where: {
+      userId: this.session.user.id
+    },
+    offset: page * numberPerPage,
+    limit: numberPerPage
+  });
+  this.body = util.map(sub, ['Group']);
 };
