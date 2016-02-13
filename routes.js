@@ -13,7 +13,7 @@ module.exports = function routes(router) {
   router.post('/user/login', user.login);
   router.post('/user/register', user.register);
   router.post('/user/forgot"', user.forgot);
-  router.get('/group/hot', group.hotGroup);
+  router.get('/group/pop', group.popGroups);
   router.get('/group/my', user.myGroups);
   router.get('/group/subscription', user.mySubscription);
 };

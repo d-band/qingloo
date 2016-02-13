@@ -7,6 +7,6 @@ exports.main = function *() {
 };
 
 // REST
-exports.hotGroup = function *() {
-  this.body = yield Group.getHot();
+exports.popGroups = function *() {
+  this.body = yield Group.getPopular();
 };

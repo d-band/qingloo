@@ -37,7 +37,7 @@ module.exports = function(sequelize, types) {
     tableName: 'group',
     comment: '贴吧',
     classMethods: {
-      getHot: function *() {
+      getPopular: function *() {
         return yield this.findAll({
           order: [['focusCount', 'DESC'], ['topicCount', 'DESC']],
           limit: 10
