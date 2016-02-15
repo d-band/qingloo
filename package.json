@@ -29,7 +29,7 @@
     "koa-view": "~0.0.3",
     "moment": "latest",
     "nodemailer": "latest",
-    "pg": "^4.4.3",
+    "pg": "^4.4.5",
     "pg-hstore": "^2.3.2",
     "sequelize": "latest"
   },
