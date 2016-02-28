@@ -4,39 +4,52 @@ const assert = require('assert');
 const app = require('../app');
 const request = require('supertest').agent(app.listen());
 
-describe('controllers/user/login', function() {
-  it('should GET /login ok', function(done) {
+describe('controllers/user', function() {
+  var csrf;
+  it('should GET /home ok', function(done) {
     request
-      .get('/login')
+      .get('/')
       .expect(200)
-      .expect(/username/)
-      .expect(/Sign in/, done);
+      .expect(/J_loginForm/)
+      .expect(/J_registerForm/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        csrf = res.text.match(/<meta name=\"_csrf\" content=\"(.*)\">/)[1];
+        done();
+      });
   });
-});
 
-describe('controllers/home', function() {
-  it('should GET / ok', function(done) {
+  it('should POST /user/login username not null', function(done) {
     request
-      .post('/login')
+      .post('/user/login')
       .send({
+        _csrf: csrf,
+        password: 'test'
+      })
+      .expect(400)
+      .expect(/用户名不能为空/, done);
+  });
+
+  it('should POST /user/login password not null', function(done) {
+    request
+      .post('/user/login')
+      .send({
+        _csrf: csrf,
+        username: 'test'
+      })
+      .expect(400)
+      .expect(/密码不能为空/, done);
+  });
+
+  it('should POST /user/login username or password wrong', function(done) {
+    request
+      .post('/user/login')
+      .send({
+        _csrf: csrf,
         username: 'test',
         password: 'test'
       })
-      .expect(302)
-      .end(function(err) {
-        assert(err === null);
-        request
-          .get('/')
-          .expect(200)
-          .expect(/Hello/, done);
-      });
-  });
-});
-
-describe('controllers/user/logout', function() {
-  it('should GET /logout ok', function(done) {
-    request
-      .get('/logout')
-      .expect(302, done);
+      .expect(400)
+      .expect(/用户名或密码错误/, done);
   });
 });

@@ -3,9 +3,11 @@
 const ip = require('ip');
 const pkg = require('./package.json');
 
+const debug = process.env.NODE_ENV !== 'prod';
+
 module.exports = {
   version: pkg.version,
-  debug: process.env.NODE_ENV !== 'prod',
+  debug: debug,
   port: process.env.PORT || 9009,
   db: {
     db: process.env.DB_NAME || 'db_qingloo',
@@ -20,7 +22,7 @@ module.exports = {
       min: 0,
       idle: 30000
     },
-    logging: console.log
+    logging: debug && console.log
   },
   env: {
     title: '轻楼 - 小而美的贴吧',
