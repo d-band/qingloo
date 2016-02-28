@@ -6,8 +6,8 @@ const pkg = require('./package.json');
 const debug = process.env.NODE_ENV !== 'prod';
 
 module.exports = {
-  version: pkg.version,
   debug: debug,
+  version: pkg.version,
   port: process.env.PORT || 9009,
   db: {
     db: process.env.DB_NAME || 'db_qingloo',
