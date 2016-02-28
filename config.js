@@ -23,8 +23,8 @@ module.exports = {
     logging: console.log
   },
   env: {
-    title: '轻楼 - 有良心的贴吧',
-    description: '轻楼 - 有良心的贴吧',
+    title: '轻楼 - 小而美的贴吧',
+    description: '轻楼 - 小而美的贴吧',
     staticRoot: process.env.STATIC || 'http://' + ip.address() + ':8000'
   },
   mail: {

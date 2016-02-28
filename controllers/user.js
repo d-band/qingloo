@@ -1,10 +1,12 @@
 'use strict';
 
-const User = require('../db').User;
 const util = require('../lib/util');
-const Subscription = require('../db').Subscription;
-const Member = require('../db').Member;
-const Group = require('../db').Group;
+const db = require('../orm').database();
+
+const User = db.User;
+const Subscription = db.Subscription;
+const Member = db.Member;
+const Group = db.Group;
 
 exports.login = function *() {
   let data = this.request.body;

@@ -1,5 +1,6 @@
 'use strict';
 
+const join = require('path').join;
 const koa = require('koa');
 const view = require('koa-view');
 const bodyParser = require('koa-bodyparser');
@@ -10,6 +11,7 @@ const favicon = require('koa-favicon');
 const csrf = require('koa-csrf');
 const router = require('koa-router')();
 
+const orm = require('./orm');
 const config = require('./config');
 const routes = require('./routes');
 
@@ -23,29 +25,32 @@ app.use(bodyParser());
 app.use(logger());
 
 /** Set public path, for css/js/images **/
-app.use(statik(__dirname + '/public', {
+app.use(statik(join(__dirname, '/public'), {
   maxage: config.debug ? 0 : 60 * 60 * 24 * 7
 }));
-app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(join(__dirname, '/public/favicon.ico')));
 
-// Sessions
+/** Sessions **/
 app.keys = ['eEp2JHpJoI8T6Rn3'];
 app.use(session({
   key: 'sid'
 }, app));
 
 /** View **/
-app.use(view(__dirname + '/views', {
+app.use(view('views', {
   noCache: config.debug
 }));
 
-/* Error */
+/** ORM **/
+app.use(orm.middleware);
+
+/** Error **/
 error(app);
 
 /** CSRF */
 app.use(csrf());
 
-// Libs
+/** Libs **/
 flash(app);
 locals(app);
 

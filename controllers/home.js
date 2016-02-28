@@ -1,14 +1,12 @@
 'use strict';
 
-const User = require('../db').User;
-
 exports.main = function *() {
   yield this.render('index');
 };
 
 exports.auth = function *() {
   let data = this.request.body;
-  let user = yield User.auth(data.username, data.password);
+  let user = yield this.orm().User.auth(data.username, data.password);
   if (user) {
     this.session.user = user;
     this.redirect('/');
@@ -28,7 +26,7 @@ exports.isAuth = function *(next) {
 
 exports.register = function *() {
   let data = this.request.body;
-  this.body = yield User.register(data.name, data.password);
+  this.body = yield this.orm().User.register(data.name, data.password);
 };
 
 exports.forgot = function *() {
