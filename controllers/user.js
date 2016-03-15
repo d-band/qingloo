@@ -43,6 +43,12 @@ exports.forgot = function *() {
 
 };
 
+exports.logout = function *(next) {
+  this.session.user = null;
+  this.redirect('/');
+  yield next;
+};
+
 exports.mySubscription = function *() {
   let numberPerPage = 20;
   let data = this.request.body;

@@ -11,6 +11,7 @@ module.exports = function routes(router) {
   router.get('/group/:id', group.main);
   // User
   router.post('/user/login', user.login);
+  router.get('/user/logout', user.logout);
   router.post('/user/register', user.register);
   router.post('/user/forgot"', user.forgot);
   router.get('/group/pop', group.popGroups);
