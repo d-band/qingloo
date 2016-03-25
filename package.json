@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "co-mocha": "~1.1.2",
-    "coveralls": "~2.11.8",
+    "coveralls": "~2.11.9",
     "eslint": "~2.4.0",
     "eslint-config-standard": "~5.1.0",
     "eslint-plugin-promise": "~1.1.0",
