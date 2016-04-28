@@ -29,7 +29,7 @@
     "koa-view": "~0.0.3",
     "moment": "~2.13.0",
     "nodemailer": "~2.3.2",
-    "pg": "~4.5.4",
+    "pg": "~4.5.5",
     "pg-hstore": "~2.3.2"
   },
   "devDependencies": {
