@@ -28,7 +28,7 @@
     "koa-static": "~2.0.0",
     "koa-view": "~0.0.3",
     "moment": "~2.13.0",
-    "nodemailer": "~2.4.1",
+    "nodemailer": "~2.4.2",
     "pg": "~4.5.5",
     "pg-hstore": "~2.3.2"
   },
