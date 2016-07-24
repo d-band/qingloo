@@ -21,7 +21,7 @@
     "koa-bodyparser": "~2.2.0",
     "koa-csrf": "~2.5.0",
     "koa-favicon": "~1.2.1",
-    "koa-generic-session": "~1.11.1",
+    "koa-generic-session": "~1.11.3",
     "koa-logger": "~1.3.0",
     "koa-orm": "0.1.0",
     "koa-router": "~5.4.0",
