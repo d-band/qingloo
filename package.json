@@ -19,7 +19,7 @@
     "ip": "~1.1.3",
     "koa": "~1.2.4",
     "koa-bodyparser": "~2.2.0",
-    "koa-csrf": "~3.0.3",
+    "koa-csrf": "~3.0.4",
     "koa-favicon": "~1.2.1",
     "koa-generic-session": "~1.11.3",
     "koa-logger": "~1.3.0",
