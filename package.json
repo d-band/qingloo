@@ -16,7 +16,7 @@
     "lint"
   ],
   "dependencies": {
-    "ip": "~1.1.3",
+    "ip": "~1.1.4",
     "koa": "~1.2.4",
     "koa-bodyparser": "~2.2.0",
     "koa-csrf": "~3.0.4",
