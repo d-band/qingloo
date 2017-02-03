@@ -25,7 +25,7 @@
     "koa-logger": "~1.3.1",
     "koa-orm": "1.2.0",
     "koa-router": "~7.1.0",
-    "koa-static": "~2.0.0",
+    "koa-static": "~2.1.0",
     "koa-view": "~1.0.1",
     "moment": "~2.17.1",
     "nodemailer": "~3.0.0",
