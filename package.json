@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "ip": "~1.1.5",
-    "koa": "~2.0.1",
+    "koa": "~2.2.0",
     "koa-bodyparser": "~4.1.0",
     "koa-csrf": "~3.0.4",
     "koa-favicon": "~2.0.0",
